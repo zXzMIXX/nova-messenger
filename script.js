@@ -12,7 +12,6 @@ let isLoginMode = false;
 if (gif && liqutglassWrapper) {
     gif.addEventListener('animationend', () => {
         liqutglassWrapper.classList.add('show');
-        // Показываем элементы формы с задержкой
         setTimeout(() => {
             loginInput.focus();
         }, 300);
@@ -42,7 +41,6 @@ if (switchLink) {
 }
 
 function toggleFormMode() {
-    // Анимация исчезновения текущего содержимого
     const formElements = [formTitle, loginInput.parentElement, passwordInput.parentElement, actionBtn.parentElement, switchText.parentElement];
     
     formElements.forEach(element => {
@@ -52,28 +50,24 @@ function toggleFormMode() {
         }
     });
     
-    // После завершения анимации исчезновения, меняем форму и показываем новую
+
     setTimeout(() => {
         isLoginMode = !isLoginMode;
         
         if (isLoginMode) {
-            // Переключаемся на форму входа
             formTitle.textContent = 'Вход';
             actionBtn.textContent = 'Войти';
             switchText.textContent = 'Нет аккаунта? ';
             switchLink.textContent = 'Зарегистрируйтесь';
         } else {
-            // Переключаемся на форму регистрации
             formTitle.textContent = 'Регистрация';
             actionBtn.textContent = 'Продолжить';
             switchText.textContent = 'Есть аккаунт? ';
             switchLink.textContent = 'Войдите';
         }
         
-        // Сбрасываем проверку полей
         checkFields();
         
-        // Анимация появления нового содержимого
         setTimeout(() => {
             formElements.forEach(element => {
                 if (element) {
