@@ -15,7 +15,6 @@ body {
     font-family: "VK Sans Display", sans-serif;
 }
 
-/* Фон на весь экран */
 body {
     background-image: url("assets/background.png");
     background-size: cover;      
@@ -45,7 +44,6 @@ body {
     100% { opacity: 0; }
 }
 
-/* Анимация для элементов формы */
 .loginField, .passwordField, .registration, .registrationbtn, .switchForm {
     opacity: 0;
     transform: translateY(20px);
