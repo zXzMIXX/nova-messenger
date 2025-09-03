@@ -1,0 +1,242 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "VK Sans Display";
+    src: url("assets/VK_Sans_Display_Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "VK Sans Display", sans-serif;
+}
+
+/* Фон на весь экран */
+body {
+    background-image: url("assets/background.png");
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+}
+
+.gif-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gif-center img {
+    max-width: 300px; 
+    height: auto;
+    opacity: 0;
+    animation: fadeInOut 2.5s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Анимация для элементов формы */
+.loginField, .passwordField, .registration, .registrationbtn, .switchForm {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease-in-out;
+}
+
+.loginField {
+    border-width: 1px;
+    border-color: rgb(44, 45, 50);
+    border-style: solid;
+    border-radius: 20px;
+    background-color: #484a51;
+    box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    width: 400px;
+    height: 60px;
+    z-index: 3;
+}
+
+.loginField input {
+    color: white;
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    padding: 12px;
+    outline: none;
+    font-family: "VK Sans Display", sans-serif;
+    width: 90%;
+}
+
+.passwordField {
+    border-width: 1px;
+    border-color: rgb(44, 45, 50);
+    border-style: solid;
+    border-radius: 20px;
+    background-color: #484a51;
+    box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    width: 400px;
+    height: 60px;
+    z-index: 3;
+}
+
+.passwordField input::placeholder {
+    font-size: 30px;
+}
+
+.passwordField input {
+    color: white;
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    padding: 12px;
+    outline: none;
+    font-family: "VK Sans Display", sans-serif;
+    width: 90%;
+}
+
+.registration {
+    font-size: 50.5px;
+    font-family: "VK Sans Display";
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    top: 15%;
+    z-index: 3;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    filter: blur(0.4px);
+}
+
+.liqut_glass {
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.149);
+    box-shadow: 
+        0px 12px 29px 0px rgba(0, 0, 0, 0.35),
+        inset 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 490px;
+    height: 360px;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.liqut_glass.show {
+    opacity: 1;
+}
+
+.liqut_glass.show .loginField,
+.liqut_glass.show .passwordField,
+.liqut_glass.show .registration,
+.liqut_glass.show .registrationbtn,
+.liqut_glass.show .switchForm {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+}
+
+.registrationbtn {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    z-index: 3;
+}
+
+.registrationbtn button {
+    font-family: "VK Sans Display";
+    font-size: 30px;
+    width: 350px;
+    height: 60px;
+    background-color: #6886a4;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+.registrationbtn button.active {
+    background-color: #2463d8;
+}
+
+.registrationbtn button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.switchForm {
+    position: fixed;
+    top: 106%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    z-index: 3;
+}
+
+.switchForm a {
+    color: #2463d8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switchForm a:hover {
+    text-decoration: underline;
+}
+
+.license-text {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "VK Sans Display", sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    z-index: 2;
+    user-select: none;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeInLicense 1s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+@keyframes fadeInLicense {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.content {
+    color: #2c2d32;
+    text-align: center;
+    padding-top: 20%;
+    font-family: Arial, sans-serif;
+}
