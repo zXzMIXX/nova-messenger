@@ -1,3 +1,28 @@
+// Функция переключения фона
+let isDay = true;
+
+function toggleBackground() {
+    document.body.style.animation = "fadeIn 1s ease";
+    
+    if (isDay) {
+        document.body.style.backgroundImage = 'url("assets/background2.png")';
+        document.getElementById("toggleBtn").textContent = "🌞";
+    } else {
+        document.body.style.backgroundImage = 'url("assets/background.png")';
+        document.getElementById("toggleBtn").textContent = "🌙";
+    }
+
+    isDay = !isDay;
+
+    setTimeout(() => {
+        document.body.style.animation = "";
+    }, 1000);
+}
+
+// Добавляем обработчик события для кнопки
+document.getElementById('toggleBtn').addEventListener('click', toggleBackground);
+
+// Остальной существующий код
 const gif = document.querySelector('.gif-center img');
 const liqutglassWrapper = document.querySelector('.liqut_glass');
 const loginInput = document.getElementById('login');
