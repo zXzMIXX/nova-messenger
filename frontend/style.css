@@ -300,6 +300,54 @@ body.dark-theme .license-text {
     100% { opacity: 1; }
 }
 
+.notification {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 350px;
+    height: 65px;
+    right: 20px;
+    bottom: 70px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(45px);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateX(100px);
+    z-index: 1000;
+    user-select: none;
+    background: url('assets/notif.png') center/cover no-repeat;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.notification-content {
+    color: #ffffff;
+    font-family: "VK Sans Display", sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Адаптация цвета текста уведомления для темной темы */
+body.light-theme .notification-content {
+    color: #ffffff;
+}
+
+body.dark-theme .notification-content {
+    color: #ffffff;
+}
+
 .content {
     color: #2c2d32;
     text-align: center;

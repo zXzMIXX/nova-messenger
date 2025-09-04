@@ -43,6 +43,8 @@ const actionBtn = document.getElementById('actionBtn');
 const formTitle = document.getElementById('formTitle');
 const switchText = document.getElementById('switchText');
 const switchLink = document.getElementById('switchLink');
+const notificationWrapper = document.querySelector('.notification');
+const notificationInput = document.querySelector('notification')
 
 let isLoginMode = false;
 
@@ -67,8 +69,39 @@ if (loginInput) {
 
 if (passwordInput) {
     passwordInput.setAttribute('maxlength', '20');
-    passwordInput.addEventListener('input', checkFields);
+    passwordInput.addEventListener('input', function() {
+        checkFields();
+        showPasswordNotification();
+    });
 }
+
+function showPasswordNotification() {
+    if (passwordInput.value.length > 0 && !notificationWrapper.classList.contains('show')) {
+        // Создаем содержимое уведомления
+        
+        // Показываем уведомление
+        notificationWrapper.classList.add('show');
+        
+        // Автоматически скрываем через 5 секунд
+        setTimeout(() => {
+            hideNotification();
+        }, 5000);
+    }
+}
+
+// Функция скрытия уведомления
+function hideNotification() {
+    notificationWrapper.classList.remove('show');
+    
+    // Убираем содержимое после анимации скрытия
+    setTimeout(() => {
+        notificationWrapper.innerHTML = '';
+    }, 500);
+}
+
+// Скрываем уведомление при клике на него
+notificationWrapper.addEventListener('click', hideNotification);
+
 
 if (switchLink) {
     switchLink.addEventListener('click', (e) => {
