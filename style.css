@@ -31,7 +31,7 @@ body {
 }
 
 .gif-center img {
-    max-width: 300px; 
+    max-width: 225px; /* 300px → -25% */
     height: auto;
     opacity: 0;
     animation: fadeInOut 2.5s ease-in-out forwards;
@@ -46,77 +46,77 @@ body {
 
 .loginField, .passwordField, .registration, .registrationbtn, .switchForm {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px); /* 20px → -25% */
     transition: all 0.3s ease-in-out;
 }
 
 .loginField {
-    border-width: 1px;
+    border-width: 0.75px; /* 1px → -25% */
     border-color: rgb(44, 45, 50);
     border-style: solid;
-    border-radius: 20px;
+    border-radius: 15px; /* 20px → -25% */
     background-color: #484a51;
-    box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 9px 21.75px 0px rgba(0, 0, 0, 0.35);
     position: fixed;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%) translateY(20px);
-    width: 400px;
-    height: 60px;
+    transform: translate(-50%, -50%) translateY(15px);
+    width: 300px; /* 400px → -25% */
+    height: 45px; /* 60px → -25% */
     z-index: 3;
 }
 
 .loginField input {
     color: white;
-    font-size: 30px;
+    font-size: 22.5px; /* 30px → -25% */
     border: none;
     background: transparent;
-    padding: 12px;
+    padding: 9px; /* 12px → -25% */
     outline: none;
     font-family: "VK Sans Display", sans-serif;
     width: 90%;
 }
 
 .passwordField {
-    border-width: 1px;
+    border-width: 0.75px;
     border-color: rgb(44, 45, 50);
     border-style: solid;
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: #484a51;
-    box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 9px 21.75px 0px rgba(0, 0, 0, 0.35);
     position: fixed;
     top: 63%;
     left: 50%;
-    transform: translate(-50%, -50%) translateY(20px);
-    width: 400px;
-    height: 60px;
+    transform: translate(-50%, -50%) translateY(15px);
+    width: 300px;
+    height: 45px;
     z-index: 3;
 }
 
 .passwordField input::placeholder {
-    font-size: 30px;
+    font-size: 22.5px;
 }
 
 .passwordField input {
     color: white;
-    font-size: 30px;
+    font-size: 22.5px;
     border: none;
     background: transparent;
-    padding: 12px;
+    padding: 9px;
     outline: none;
     font-family: "VK Sans Display", sans-serif;
     width: 90%;
 }
 
 .registration {
-    font-size: 50.5px;
+    font-size: 37.875px; /* 50.5px → -25% */
     font-family: "VK Sans Display";
     color: rgb(0, 0, 0);
     line-height: 1.2;
     text-align: center;
     position: fixed;
     left: 50%;
-    transform: translate(-50%, -50%) translateY(20px);
+    transform: translate(-50%, -50%) translateY(15px);
     top: 15%;
     z-index: 3;
     user-select: none;
@@ -127,17 +127,17 @@ body {
 }
 
 .liqut_glass {
-    border-radius: 50px;
+    border-radius: 37.5px; /* 50px → -25% */
     background-color: rgba(255, 255, 255, 0.149);
     box-shadow: 
-        0px 12px 29px 0px rgba(0, 0, 0, 0.35),
-        inset 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+        0px 9px 21.75px 0px rgba(0, 0, 0, 0.35),
+        inset 0px 9px 21.75px 0px rgba(0, 0, 0, 0.35);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 490px;
-    height: 360px;
+    width: 367.5px; /* 490px → -25% */
+    height: 270px; /* 360px → -25% */
     z-index: 2;
     backdrop-filter: blur(10px);
     opacity: 0;
@@ -161,19 +161,19 @@ body {
     position: fixed;
     top: 85%;
     left: 50%;
-    transform: translate(-50%, -50%) translateY(20px);
+    transform: translate(-50%, -50%) translateY(15px);
     z-index: 3;
 }
 
 .registrationbtn button {
     font-family: "VK Sans Display";
-    font-size: 30px;
-    width: 350px;
-    height: 60px;
+    font-size: 22.5px;
+    width: 262.5px; /* 350px → -25% */
+    height: 45px; /* 60px → -25% */
     background-color: #6886a4;
     color: #ffffff;
     border: none;
-    border-radius: 20px;
+    border-radius: 15px;
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s ease;
@@ -193,10 +193,10 @@ body {
     position: fixed;
     top: 106%;
     left: 50%;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateX(-50%) translateY(15px);
     text-align: center;
     color: #000;
-    font-size: 18px;
+    font-size: 13.5px; /* 18px → -25% */
     z-index: 3;
 }
 
@@ -212,16 +212,16 @@ body {
 
 .license-text {
     position: fixed;
-    bottom: 20px;
+    bottom: 15px; /* 20px → -25% */
     left: 50%;
     transform: translateX(-50%);
     font-family: "VK Sans Display", sans-serif;
-    font-size: 14px;
+    font-size: 10.5px; /* 14px → -25% */
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     z-index: 2;
     user-select: none;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0.75px 1.5px rgba(0, 0, 0, 0.5);
     opacity: 0;
     animation: fadeInLicense 1s ease-in-out forwards;
     animation-delay: 3s;
@@ -235,6 +235,6 @@ body {
 .content {
     color: #2c2d32;
     text-align: center;
-    padding-top: 20%;
+    padding-top: 15%; /* 20% → -25% */
     font-family: Arial, sans-serif;
 }
