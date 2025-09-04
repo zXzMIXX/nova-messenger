@@ -3,7 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        background-image: url("assets/background.png"); /* Солнце */
+        background-size: cover;      
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;
+        transition: background-image 1s ease-in-out;
+        font-size: 75%; /* уменьшение всего текста на 25% */
+    }
+
+    .gif-center img {
+        max-width: 75%; /* уменьшение GIF */
+    }
+
+    .liqut_glass {
+        padding: 15px; /* было 20px */
+        border-radius: 7.5px; /* было 10px */
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(5px);
+        max-width: 300px; /* если было 400px */
+        margin: auto;
+    }
+
+    .registration {
+        font-size: 1.5em; /* уменьшено на 25% */
+        margin-bottom: 7.5px;
+        text-align: center;
+    }
+
+    .loginField input,
+    .passwordField input {
+        width: 100%;
+        padding: 6px; /* было 8px */
+        font-size: 0.9em; /* уменьшено */
+        margin-bottom: 7.5px;
+        border-radius: 3.75px; /* было 5px */
+        border: 1px solid #ccc;
+    }
+
+    .registrationbtn button {
+        width: 100%;
+        padding: 6px; /* было 8px */
+        font-size: 0.9em;
+        border: none;
+        border-radius: 3.75px;
+        cursor: pointer;
+        background-color: rgba(0,0,0,0.6);
+        color: white;
+    }
+
+    .switchForm {
+        font-size: 0.85em;
+        text-align: center;
+        margin-top: 6px;
+    }
+
+    .license-text {
+        font-size: 0.75em;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .change-bg-btn {
+        position: fixed;
+        top: 15px; /* было 20px */
+        right: 15px;
+        padding: 6px 6px; /* было 8px */
+        font-size: 15px; /* было 20px */
+        border: none;
+        border-radius: 6px; /* было 8px */
+        cursor: pointer;
+        background-color: rgba(0,0,0,0.6);
+        color: white;
+        box-shadow: 0 0 7.5px rgba(255,255,255,0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        user-select: none;
+    }
+
+    .change-bg-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 11.25px rgba(255,255,255,0.6);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
 </head>
 <body>
     <div class="gif-center">
@@ -35,75 +123,28 @@
         Лицензировано Nova™
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <button class="change-bg-btn" id="toggleBtn" onclick="toggleBackground()">🌞</button>
 
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<style>
-    body {
-        background-image: url("assets/background.png"); /* Солнце */
-        background-size: cover;      
-        background-position: center; 
-        background-repeat: no-repeat; 
-        background-attachment: fixed;
-        transition: background-image 1s ease-in-out; /* плавная смена */
-    }
+    <script>
+        let isDay = true;
 
-    .change-bg-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 8px 8px;
-        font-size: 20px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        background-color: rgba(0,0,0,0.6);
-        color: white;
-        box-shadow: 0 0 10px rgba(255,255,255,0.3);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        user-select: none; /* запрет выделения текста */
-    }
+        function toggleBackground() {
+            document.body.style.animation = "fadeIn 1s ease";
+            
+            if (isDay) {
+                document.body.style.backgroundImage = 'url("assets/background2.png")'; // Луна
+                document.getElementById("toggleBtn").textContent = "🌞";
+            } else {
+                document.body.style.backgroundImage = 'url("assets/background.png")'; // Солнце
+                document.getElementById("toggleBtn").textContent = "🌙";
+            }
 
-    .change-bg-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 15px rgba(255,255,255,0.6);
-    }
+            isDay = !isDay;
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-</style>
-</head>
-<body>
-
-<button class="change-bg-btn" id="toggleBtn" onclick="toggleBackground()">🌞</button>
-
-<script>
-    let isDay = true;
-
-    function toggleBackground() {
-        document.body.style.animation = "fadeIn 1s ease";
-        
-        if (isDay) {
-            document.body.style.backgroundImage = 'url("assets/background2.png")'; // Луна
-            document.getElementById("toggleBtn").textContent = "🌞";
-        } else {
-            document.body.style.backgroundImage = 'url("assets/background.png")'; // Солнце
-            document.getElementById("toggleBtn").textContent = "🌙";
+            setTimeout(() => {
+                document.body.style.animation = "";
+            }, 1000);
         }
-
-        isDay = !isDay;
-
-        setTimeout(() => {
-            document.body.style.animation = "";
-        }, 1000);
-    }
-</script>
-
+    </script>
 </body>
 </html>
