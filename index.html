@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button class="change-bg-btn" id="toggleBtn">🌞</button>
+    
     <div class="gif-center">
         <img src="assets/moon.gif" alt="GIF">
     </div>
@@ -36,74 +38,5 @@
     </div>
 
     <script src="script.js"></script>
-</body>
-</html>
-
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<style>
-    body {
-        background-image: url("assets/background.png"); /* Солнце */
-        background-size: cover;      
-        background-position: center; 
-        background-repeat: no-repeat; 
-        background-attachment: fixed;
-        transition: background-image 1s ease-in-out; /* плавная смена */
-    }
-
-    .change-bg-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 8px 8px;
-        font-size: 20px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        background-color: rgba(0,0,0,0.6);
-        color: white;
-        box-shadow: 0 0 10px rgba(255,255,255,0.3);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        user-select: none; /* запрет выделения текста */
-    }
-
-    .change-bg-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 15px rgba(255,255,255,0.6);
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-</style>
-</head>
-<body>
-
-<button class="change-bg-btn" id="toggleBtn" onclick="toggleBackground()">🌞</button>
-
-<script>
-    let isDay = true;
-
-    function toggleBackground() {
-        document.body.style.animation = "fadeIn 1s ease";
-        
-        if (isDay) {
-            document.body.style.backgroundImage = 'url("assets/background2.png")'; // Луна
-            document.getElementById("toggleBtn").textContent = "🌞";
-        } else {
-            document.body.style.backgroundImage = 'url("assets/background.png")'; // Солнце
-            document.getElementById("toggleBtn").textContent = "🌙";
-        }
-
-        isDay = !isDay;
-
-        setTimeout(() => {
-            document.body.style.animation = "";
-        }, 1000);
-    }
-</script>
-
 </body>
 </html>

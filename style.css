@@ -13,14 +13,49 @@ html, body {
 
 body {
     font-family: "VK Sans Display", sans-serif;
-}
-
-body {
     background-image: url("assets/background.png");
     background-size: cover;      
     background-position: center; 
     background-repeat: no-repeat; 
     background-attachment: fixed;
+    transition: background-image 1s ease-in-out, color 1s ease-in-out;
+}
+
+/* Стили для светлой темы (по умолчанию) */
+body.light-theme {
+    color: #000000;
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    color: #ffffff;
+}
+
+.change-bg-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 8px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    user-select: none;
+    z-index: 1000;
+}
+
+.change-bg-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .gif-center {
@@ -31,7 +66,7 @@ body {
 }
 
 .gif-center img {
-    max-width: 225px; /* 300px → -25% */
+    max-width: 225px;
     height: auto;
     opacity: 0;
     animation: fadeInOut 2.5s ease-in-out forwards;
@@ -46,32 +81,33 @@ body {
 
 .loginField, .passwordField, .registration, .registrationbtn, .switchForm {
     opacity: 0;
-    transform: translateY(15px); /* 20px → -25% */
+    transform: translateY(15px);
     transition: all 0.3s ease-in-out;
 }
 
 .loginField {
-    border-width: 0.75px; /* 1px → -25% */
+    border-width: 0.75px;
     border-color: rgb(44, 45, 50);
     border-style: solid;
-    border-radius: 15px; /* 20px → -25% */
+    border-radius: 15px;
     background-color: #484a51;
     box-shadow: 0px 9px 21.75px 0px rgba(0, 0, 0, 0.35);
     position: fixed;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%) translateY(15px);
-    width: 300px; /* 400px → -25% */
-    height: 45px; /* 60px → -25% */
+    width: 300px;
+    height: 45px;
     z-index: 3;
+    user-select: none;
 }
 
 .loginField input {
     color: white;
-    font-size: 22.5px; /* 30px → -25% */
+    font-size: 22.5px;
     border: none;
     background: transparent;
-    padding: 9px; /* 12px → -25% */
+    padding: 9px;
     outline: none;
     font-family: "VK Sans Display", sans-serif;
     width: 90%;
@@ -91,6 +127,7 @@ body {
     width: 300px;
     height: 45px;
     z-index: 3;
+    user-select: none;
 }
 
 .passwordField input::placeholder {
@@ -109,9 +146,8 @@ body {
 }
 
 .registration {
-    font-size: 37.875px; /* 50.5px → -25% */
+    font-size: 37.875px;
     font-family: "VK Sans Display";
-    color: rgb(0, 0, 0);
     line-height: 1.2;
     text-align: center;
     position: fixed;
@@ -124,10 +160,21 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     filter: blur(0.4px);
+    transition: color 1s ease-in-out;
+}
+
+/* Цвет текста для светлой темы */
+body.light-theme .registration {
+    color: #000000;
+}
+
+/* Цвет текста для темной темы */
+body.dark-theme .registration {
+    color: #ffffff;
 }
 
 .liqut_glass {
-    border-radius: 37.5px; /* 50px → -25% */
+    border-radius: 37.5px;
     background-color: rgba(255, 255, 255, 0.149);
     box-shadow: 
         0px 9px 21.75px 0px rgba(0, 0, 0, 0.35),
@@ -136,8 +183,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 367.5px; /* 490px → -25% */
-    height: 270px; /* 360px → -25% */
+    width: 367.5px;
+    height: 270px;
     z-index: 2;
     backdrop-filter: blur(10px);
     opacity: 0;
@@ -168,8 +215,8 @@ body {
 .registrationbtn button {
     font-family: "VK Sans Display";
     font-size: 22.5px;
-    width: 262.5px; /* 350px → -25% */
-    height: 45px; /* 60px → -25% */
+    width: 262.5px;
+    height: 45px;
     background-color: #6886a4;
     color: #ffffff;
     border: none;
@@ -195,9 +242,20 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(15px);
     text-align: center;
-    color: #000;
-    font-size: 13.5px; /* 18px → -25% */
+    font-size: 13.5px;
     z-index: 3;
+    transition: color 1s ease-in-out;
+    user-select: none;
+}
+
+/* Цвет текста для светлой темы */
+body.light-theme .switchForm {
+    color: #000000;
+}
+
+/* Цвет текста для темной темы */
+body.dark-theme .switchForm {
+    color: #ffffff;
 }
 
 .switchForm a {
@@ -212,12 +270,11 @@ body {
 
 .license-text {
     position: fixed;
-    bottom: 15px; /* 20px → -25% */
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     font-family: "VK Sans Display", sans-serif;
-    font-size: 10.5px; /* 14px → -25% */
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 10.5px;
     text-align: center;
     z-index: 2;
     user-select: none;
@@ -225,6 +282,17 @@ body {
     opacity: 0;
     animation: fadeInLicense 1s ease-in-out forwards;
     animation-delay: 3s;
+    transition: color 1s ease-in-out;
+}
+
+/* Цвет текста для светлой темы */
+body.light-theme .license-text {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Цвет текста для темной темы */
+body.dark-theme .license-text {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes fadeInLicense {
@@ -235,6 +303,6 @@ body {
 .content {
     color: #2c2d32;
     text-align: center;
-    padding-top: 15%; /* 20% → -25% */
+    padding-top: 15%;
     font-family: Arial, sans-serif;
 }
