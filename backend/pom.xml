@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ru.loper</groupId>
-	<artifactId>cuantum</artifactId>
+	<artifactId>quantum</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cuantum</name>
+	<name>quantum</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

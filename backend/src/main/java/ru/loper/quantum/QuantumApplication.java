@@ -1,13 +1,13 @@
-package ru.loper.cuantum;
+package ru.loper.quantum;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CuantumApplication {
+public class QuantumApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CuantumApplication.class, args);
+		SpringApplication.run(QuantumApplication.class, args);
 	}
 
 }
