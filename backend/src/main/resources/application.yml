@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: 'Quantum'
+  datasource:
+    url: 'jdbc:mysql://mysql.play2go.cloud:3306/s17504_licence'
+    username: 'u17504_28n4Bx6lM8'
+    password: 'ZOvS^AfGRJ0g3g51w5c8N7x^'
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+jwt:
+  secret: 'test-123'
+  expirationMs: 86400000
