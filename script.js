@@ -5,10 +5,16 @@ function toggleBackground() {
     document.body.style.animation = "fadeIn 1s ease";
     
     if (isDay) {
+        // Переключаем на темную тему (Луна)
         document.body.style.backgroundImage = 'url("assets/background2.png")';
+        document.body.classList.remove('light-theme');
+        document.body.classList.add('dark-theme');
         document.getElementById("toggleBtn").textContent = "🌞";
     } else {
+        // Переключаем на светлую тему (Солнце)
         document.body.style.backgroundImage = 'url("assets/background.png")';
+        document.body.classList.remove('dark-theme');
+        document.body.classList.add('light-theme');
         document.getElementById("toggleBtn").textContent = "🌙";
     }
 
@@ -18,6 +24,12 @@ function toggleBackground() {
         document.body.style.animation = "";
     }, 1000);
 }
+
+// Инициализация темы при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+    // Устанавливаем светлую тему по умолчанию
+    document.body.classList.add('light-theme');
+});
 
 // Добавляем обработчик события для кнопки
 document.getElementById('toggleBtn').addEventListener('click', toggleBackground);

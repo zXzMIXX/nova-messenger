@@ -18,7 +18,17 @@ body {
     background-position: center; 
     background-repeat: no-repeat; 
     background-attachment: fixed;
-    transition: background-image 1s ease-in-out;
+    transition: background-image 1s ease-in-out, color 1s ease-in-out;
+}
+
+/* Стили для светлой темы (по умолчанию) */
+body.light-theme {
+    color: #000000;
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    color: #ffffff;
 }
 
 .change-bg-btn {
@@ -89,6 +99,7 @@ body {
     width: 300px;
     height: 45px;
     z-index: 3;
+    user-select: none;
 }
 
 .loginField input {
@@ -116,6 +127,7 @@ body {
     width: 300px;
     height: 45px;
     z-index: 3;
+    user-select: none;
 }
 
 .passwordField input::placeholder {
@@ -136,7 +148,6 @@ body {
 .registration {
     font-size: 37.875px;
     font-family: "VK Sans Display";
-    color: rgb(0, 0, 0);
     line-height: 1.2;
     text-align: center;
     position: fixed;
@@ -149,6 +160,17 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     filter: blur(0.4px);
+    transition: color 1s ease-in-out;
+}
+
+/* Цвет текста для светлой темы */
+body.light-theme .registration {
+    color: #000000;
+}
+
+/* Цвет текста для темной темы */
+body.dark-theme .registration {
+    color: #ffffff;
 }
 
 .liqut_glass {
@@ -220,9 +242,20 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(15px);
     text-align: center;
-    color: #000;
     font-size: 13.5px;
     z-index: 3;
+    transition: color 1s ease-in-out;
+    user-select: none;
+}
+
+/* Цвет текста для светлой темы */
+body.light-theme .switchForm {
+    color: #000000;
+}
+
+/* Цвет текста для темной темы */
+body.dark-theme .switchForm {
+    color: #ffffff;
 }
 
 .switchForm a {
@@ -242,7 +275,6 @@ body {
     transform: translateX(-50%);
     font-family: "VK Sans Display", sans-serif;
     font-size: 10.5px;
-    color: rgba(255, 255, 255, 0.7);
     text-align: center;
     z-index: 2;
     user-select: none;
@@ -250,6 +282,17 @@ body {
     opacity: 0;
     animation: fadeInLicense 1s ease-in-out forwards;
     animation-delay: 3s;
+    transition: color 1s ease-in-out;
+}
+
+/* Цвет текста для светлой темы */
+body.light-theme .license-text {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Цвет текста для темной темы */
+body.dark-theme .license-text {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes fadeInLicense {
