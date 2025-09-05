@@ -1,17 +1,14 @@
-// Функция переключения фона
-let isDay = true;
+let isDay = false;
 
 function toggleBackground() {
     document.body.style.animation = "fadeIn 1s ease";
     
     if (isDay) {
-        // Переключаем на темную тему (Луна)
         document.body.style.backgroundImage = 'url("assets/background2.png")';
         document.body.classList.remove('light-theme');
         document.body.classList.add('dark-theme');
         document.getElementById("toggleBtn").textContent = "🌞";
     } else {
-        // Переключаем на светлую тему (Солнце)
         document.body.style.backgroundImage = 'url("assets/background.png")';
         document.body.classList.remove('dark-theme');
         document.body.classList.add('light-theme');
@@ -25,16 +22,16 @@ function toggleBackground() {
     }, 1000);
 }
 
-// Инициализация темы при загрузке
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Устанавливаем светлую тему по умолчанию
-    document.body.classList.add('light-theme');
+    localStorage.removeItem('passwordNotificationShown');
+    document.body.classList.add('dark-theme');
+    document.body.style.backgroundImage = 'url("assets/background2.png")';
+    document.getElementById("toggleBtn").textContent = "🌞";
 });
 
-// Добавляем обработчик события для кнопки
 document.getElementById('toggleBtn').addEventListener('click', toggleBackground);
 
-// Остальной существующий код
 const gif = document.querySelector('.gif-center img');
 const liqutglassWrapper = document.querySelector('.liqut_glass');
 const loginInput = document.getElementById('login');
@@ -44,7 +41,6 @@ const formTitle = document.getElementById('formTitle');
 const switchText = document.getElementById('switchText');
 const switchLink = document.getElementById('switchLink');
 const notificationWrapper = document.querySelector('.notification');
-const notificationInput = document.querySelector('notification')
 
 let isLoginMode = false;
 
@@ -76,32 +72,29 @@ if (passwordInput) {
 }
 
 function showPasswordNotification() {
+    if (localStorage.getItem('passwordNotificationShown')) {
+        return;
+    }
+    
     if (passwordInput.value.length > 0 && !notificationWrapper.classList.contains('show')) {
-        // Создаем содержимое уведомления
-        
-        // Показываем уведомление
         notificationWrapper.classList.add('show');
-        
-        // Автоматически скрываем через 5 секунд
+        localStorage.setItem('passwordNotificationShown', 'true');
+
         setTimeout(() => {
             hideNotification();
         }, 5000);
     }
 }
 
-// Функция скрытия уведомления
 function hideNotification() {
     notificationWrapper.classList.remove('show');
     
-    // Убираем содержимое после анимации скрытия
     setTimeout(() => {
         notificationWrapper.innerHTML = '';
     }, 500);
 }
 
-// Скрываем уведомление при клике на него
 notificationWrapper.addEventListener('click', hideNotification);
-
 
 if (switchLink) {
     switchLink.addEventListener('click', (e) => {
